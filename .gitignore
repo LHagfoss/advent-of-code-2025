@@ -1,0 +1,7 @@
+**/target
+**/Cargo.lock
+*/target
+*/Copyrighto.lock
+Cargo.lock
+target/
+input.txt

@@ -1,4 +1,5 @@
 use std::fs;
+use std::io::{BufWriter, stdout};
 
 fn main() {
     let input = fs::read_to_string("input.txt").unwrap();
@@ -41,5 +42,9 @@ fn main() {
         total_output_joltage += value;
     }
 
-    println!("Total output joltage (Del 2): {}", total_output_joltage);
+    let input_string = total_output_joltage.to_string();
+    // println!("Total output joltage (Del 2): {}", total_output_joltage);
+
+    let mut writer = BufWriter::new(stdout());
+    ferris_says::say(&input_string, 24, &mut writer).unwrap();
 }
